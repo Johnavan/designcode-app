@@ -2,7 +2,7 @@ import React from "react";
 import { ScrollView, SafeAreaView } from "react-native";
 import styled from "styled-components";
 import Card from "./components/Card";
-import { Icon } from "expo";
+import { Ionicons } from "@expo/vector-icons";
 
 export default class App extends React.Component {
   render() {
@@ -14,6 +14,7 @@ export default class App extends React.Component {
               <Avatar source={require("./assets/avatar.jpg")} />
               <Title>Welcome back,</Title>
               <Name>Johnavan</Name>
+              <Ionicons name="ios-notifications" size={32} color="#4775f2" />
             </TitleBar>
             <Subtitle>Continue Learning</Subtitle>
             <ScrollView
