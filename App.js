@@ -2,7 +2,9 @@ import React from "react";
 import { ScrollView, SafeAreaView } from "react-native";
 import styled from "styled-components";
 import Card from "./components/Card";
-import { Ionicons } from "@expo/vector-icons";
+import { Icon } from "expo";
+import { Logo } from "./components/Logo";
+import { NotificationIcon } from "./components/icons";
 
 export default class App extends React.Component {
   render() {
@@ -14,8 +16,23 @@ export default class App extends React.Component {
               <Avatar source={require("./assets/avatar.jpg")} />
               <Title>Welcome back,</Title>
               <Name>Johnavan</Name>
-              <Ionicons name="ios-notifications" size={32} color="#4775f2" />
+              <NotificationIcon
+                style={{ position: "absolute", right: 20, top: 5 }}
+              />
             </TitleBar>
+            <Logo
+              image={require("./assets/logo-framerx.png")}
+              text="Framer X"
+            />
+            <ScrollView
+              style={{
+                flexDirection: "row",
+                padding: 20,
+                paddingLeft: 12,
+                paddingTop: 30
+              }}
+              horizontal={true}
+            ></ScrollView>
             <Subtitle>Continue Learning</Subtitle>
             <ScrollView
               horizontal={true}
@@ -30,8 +47,8 @@ export default class App extends React.Component {
                 subtitle="5 of 12 sections"
               />
               <Card
-                title="Styled Components"
-                image={require("./assets/background2.jpg")}
+                title="Styled Components 2"
+                image={require("./assets/background1.jpg")}
                 caption="React Native"
                 logo={require("./assets/logo-react.png")}
                 subtitle="5 of 12 sections"
@@ -43,6 +60,26 @@ export default class App extends React.Component {
     );
   }
 }
+
+const Subtitle = styled.Text`
+  color: #b8bece;
+  font-weight: 600;
+  font-size: 15px;
+  margin-left: 20px;
+  margin-top: 10px;
+  text-transform: uppercase;
+`;
+
+const Avatar = styled.Image`
+  width: 44px;
+  height: 44px;
+  background: black;
+  border-radius: 22px;
+  margin-left: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
 
 const Container = styled.View`
   flex: 1;
@@ -65,24 +102,4 @@ const TitleBar = styled.View`
   width: 100%;
   margin-top: 50px;
   padding-left: 80px;
-`;
-
-const Avatar = styled.Image`
-  width: 44px;
-  height: 44px;
-  background: black;
-  border-radius: 22px;
-  margin-left: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
-
-const Subtitle = styled.Text`
-  color: #b8bece;
-  font-weight: 600;
-  font-size: 15px;
-  margin-left: 20px;
-  margin-top: 50px;
-  text-transform: uppercase;
 `;
